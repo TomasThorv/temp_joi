@@ -107,7 +107,7 @@
     h1 {
       position: absolute;
       left: 50%;
-      top: 50%;
+      top: 60%;
       transform: translateX(-50%) translateY(-50%);
       font-family: 'Inter', 'Helvetica Neue', sans-serif;
       color: #000000;
@@ -137,22 +137,18 @@
       opacity: 0.9;
     }
     .loader {
-      height: 60px;
+      width: 40px;
       aspect-ratio: 1;
-      --c:no-repeat linear-gradient(#fff 0 0);
-      background: var(--c), var(--c), var(--c), var(--c);
-      background-size: 33.4% 33.4%;
-      animation: l7 1.5s infinite linear;
-      margin-top: 2rem;
+      background: #000;
+      animation: l1 1s infinite;
+      position: absolute;
+      left: 50%;
+      top: 65%;
+      transform: translateX(-50%);
     }
-    @keyframes l7 {
-      0%,
-      5%   {background-position:0 0,50% 0,0 50%,50% 50%}
-      25%  {background-position:0 0,100% 0,0 100%,50% 50%}
-      50%  {background-position:50% 0,100% 0,0 100%,0 50%}
-      75%  {background-position:50% 0,100% 50%,0 100%,0 0}
-      95%,
-      100% {background-position:50% 0,50% 50%,0 50%,0 0} 
+    @keyframes l1 {
+      0%   {transform: translateX(-50%) perspective(150px) rotateX(0deg)}
+      100% {transform: translateX(-50%) perspective(150px) rotateX(180deg)}
     }
     @keyframes slide {
       from { right: -25vw; }
