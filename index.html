@@ -9,7 +9,7 @@
       margin: 0;
       height: 100vh;
       font-family: "Inter", sans-serif;
-      background: #1a1a2e;
+      background: black;
       color: #fff;
       display: flex;
       align-items: center;
@@ -20,75 +20,84 @@
       position: relative;
     }
     
-    .bubble-background {
-      position: absolute;
+    .rainbow {
+      height: 100vh;
+      width: 0;
       top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: 1;
-    }
-    
-    .bubble {
       position: absolute;
-      border-radius: 50%;
-      filter: blur(40px);
-      mix-blend-mode: hard-light;
-      animation-duration: 20s;
-      animation-timing-function: ease-in-out;
-      animation-iteration-count: infinite;
+      transform: rotate(10deg);
+      transform-origin: top right;
+      animation: linear infinite slide;
     }
     
-    .bubble1 {
-      width: 80%;
-      height: 80%;
-      top: 10%;
-      left: 10%;
-      background: radial-gradient(circle at center, rgba(18,113,255,0.8) 0%, rgba(18,113,255,0) 50%);
-      animation-name: float1;
-      animation-duration: 30s;
+    /* Generate rainbow elements with different colors and timings */
+    .rainbow:nth-child(1) {
+      box-shadow: -130px 0 80px 40px white, -50px 0 50px 25px rgb(232,121,249), 0 0 50px 25px rgb(96,165,250), 50px 0 50px 25px rgb(94,234,212), 130px 0 80px 40px white;
+      animation-duration: 43.1s;
+      animation-delay: -1.8s;
+    }
+    .rainbow:nth-child(2) {
+      box-shadow: -130px 0 80px 40px white, -50px 0 50px 25px rgb(96,165,250), 0 0 50px 25px rgb(232,121,249), 50px 0 50px 25px rgb(94,234,212), 130px 0 80px 40px white;
+      animation-duration: 41.2s;
+      animation-delay: -3.6s;
+    }
+    .rainbow:nth-child(3) {
+      box-shadow: -130px 0 80px 40px white, -50px 0 50px 25px rgb(94,234,212), 0 0 50px 25px rgb(232,121,249), 50px 0 50px 25px rgb(96,165,250), 130px 0 80px 40px white;
+      animation-duration: 39.3s;
+      animation-delay: -5.4s;
+    }
+    .rainbow:nth-child(4) {
+      box-shadow: -130px 0 80px 40px white, -50px 0 50px 25px rgb(94,234,212), 0 0 50px 25px rgb(96,165,250), 50px 0 50px 25px rgb(232,121,249), 130px 0 80px 40px white;
+      animation-duration: 37.4s;
+      animation-delay: -7.2s;
+    }
+    .rainbow:nth-child(5) {
+      box-shadow: -130px 0 80px 40px white, -50px 0 50px 25px rgb(96,165,250), 0 0 50px 25px rgb(94,234,212), 50px 0 50px 25px rgb(232,121,249), 130px 0 80px 40px white;
+      animation-duration: 35.5s;
+      animation-delay: -9s;
+    }
+    .rainbow:nth-child(6) {
+      box-shadow: -130px 0 80px 40px white, -50px 0 50px 25px rgb(232,121,249), 0 0 50px 25px rgb(94,234,212), 50px 0 50px 25px rgb(96,165,250), 130px 0 80px 40px white;
+      animation-duration: 33.6s;
+      animation-delay: -10.8s;
+    }
+    .rainbow:nth-child(7) {
+      box-shadow: -130px 0 80px 40px white, -50px 0 50px 25px rgb(96,165,250), 0 0 50px 25px rgb(232,121,249), 50px 0 50px 25px rgb(94,234,212), 130px 0 80px 40px white;
+      animation-duration: 31.7s;
+      animation-delay: -12.6s;
+    }
+    .rainbow:nth-child(8) {
+      box-shadow: -130px 0 80px 40px white, -50px 0 50px 25px rgb(94,234,212), 0 0 50px 25px rgb(96,165,250), 50px 0 50px 25px rgb(232,121,249), 130px 0 80px 40px white;
+      animation-duration: 29.8s;
+      animation-delay: -14.4s;
+    }
+    .rainbow:nth-child(9) {
+      box-shadow: -130px 0 80px 40px white, -50px 0 50px 25px rgb(232,121,249), 0 0 50px 25px rgb(96,165,250), 50px 0 50px 25px rgb(94,234,212), 130px 0 80px 40px white;
+      animation-duration: 27.9s;
+      animation-delay: -16.2s;
+    }
+    .rainbow:nth-child(10) {
+      box-shadow: -130px 0 80px 40px white, -50px 0 50px 25px rgb(96,165,250), 0 0 50px 25px rgb(94,234,212), 50px 0 50px 25px rgb(232,121,249), 130px 0 80px 40px white;
+      animation-duration: 26s;
+      animation-delay: -18s;
     }
     
-    .bubble2 {
-      width: 80%;
-      height: 80%;
-      top: 10%;
-      left: 10%;
-      background: radial-gradient(circle at center, rgba(221,74,255,0.8) 0%, rgba(221,74,255,0) 50%);
-      animation-name: rotate1;
-      animation-duration: 20s;
+    .h {
+      box-shadow: 0 0 50vh 40vh white;
+      width: 100vw;
+      height: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute;
     }
     
-    .bubble3 {
-      width: 80%;
-      height: 80%;
-      top: calc(50% + 200px);
-      left: calc(50% - 500px);
-      background: radial-gradient(circle at center, rgba(0,220,255,0.8) 0%, rgba(0,220,255,0) 50%);
-      animation-name: rotate2;
-      animation-duration: 40s;
-    }
-    
-    .bubble4 {
-      width: 80%;
-      height: 80%;
-      top: 10%;
-      left: 10%;
-      background: radial-gradient(circle at center, rgba(200,50,50,0.8) 0%, rgba(200,50,50,0) 50%);
-      animation-name: float2;
-      animation-duration: 40s;
-      opacity: 0.7;
-    }
-    
-    .bubble5 {
-      width: 160%;
-      height: 160%;
-      top: calc(50% - 80%);
-      left: calc(50% - 80%);
-      background: radial-gradient(circle at center, rgba(180,180,50,0.8) 0%, rgba(180,180,50,0) 50%);
-      animation-name: rotate3;
-      animation-duration: 25s;
+    .v {
+      box-shadow: 0 0 35vw 25vw white;
+      width: 0;
+      height: 100vh;
+      bottom: 0;
+      left: 0;
+      position: absolute;
     }
     
     .content {
@@ -145,43 +154,28 @@
       95%,
       100% {background-position:50% 0,50% 50%,0 50%,0 0} 
     }
-    @keyframes float1 {
-      0%, 100% { transform: translateY(-50px); }
-      50% { transform: translateY(50px); }
-    }
-    
-    @keyframes float2 {
-      0%, 100% { transform: translateX(-50px); }
-      50% { transform: translateX(50px); }
-    }
-    
-    @keyframes rotate1 {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    
-    @keyframes rotate2 {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    
-    @keyframes rotate3 {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    @keyframes slide {
+      from { right: -25vw; }
+      to { right: 125vw; }
     }
   </style>
 </head>
 <body>
-  <div class="bubble-background">
-    <div class="bubble bubble1"></div>
-    <div class="bubble bubble2"></div>
-    <div class="bubble bubble3"></div>
-    <div class="bubble bubble4"></div>
-    <div class="bubble bubble5"></div>
-  </div>
+  <div class="rainbow"></div>
+  <div class="rainbow"></div>
+  <div class="rainbow"></div>
+  <div class="rainbow"></div>
+  <div class="rainbow"></div>
+  <div class="rainbow"></div>
+  <div class="rainbow"></div>
+  <div class="rainbow"></div>
+  <div class="rainbow"></div>
+  <div class="rainbow"></div>
+  
+  <div class="h"></div>
+  <div class="v"></div>
   
   <div class="content">
-    <img src="joiAlltFyriBoltann_B.png" alt="Logo" class="logo">
     <h1>Síða í vinslu</h1>
     <p>glæný vefsíða á leiðinni!</p>
     <div class="loader"></div>
