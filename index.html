@@ -139,16 +139,23 @@
     .loader {
       width: 40px;
       aspect-ratio: 1;
-      background: #000;
-      animation: l1 1s infinite;
+      animation: 
+        l3-1 2s infinite linear,
+        l3-2 3s infinite steps(1) -.5s;
       position: absolute;
       left: 50%;
       top: 90%;
       transform: translateX(-50%);
     }
-    @keyframes l1 {
-      0%   {transform: translateX(-50%) perspective(150px) rotateX(0deg)}
-      100% {transform: translateX(-50%) perspective(150px) rotateX(180deg)}
+    @keyframes l3-1 {
+      0%   {transform: translateX(-50%) perspective(150px) rotateX(0deg) rotateY(0deg)}
+      50%  {transform: translateX(-50%) perspective(150px) rotateX(180deg) rotateY(0deg)}
+      100% {transform: translateX(-50%) perspective(150px) rotateX(180deg) rotateY(180deg)}
+    }
+    @keyframes l3-2 {
+      0%  {background: #ffa516}
+      33% {background: #f03355}
+      66% {background: #25b09b}
     }
     @keyframes slide {
       from { right: -25vw; }
