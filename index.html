@@ -162,6 +162,30 @@
       from { right: -25vw; }
       to { right: 125vw; }
     }
+    
+    /* Responsive adjustments for mobile */
+    @media (max-width: 480px) {
+      .logo {
+        width: min(80vw, 380px);
+        height: auto;
+      }
+      h1 {
+        top: 82%;
+        font-size: 1.25em;
+        letter-spacing: 0.5px;
+      }
+      .loader {
+        top: 97%;
+        width: 32px;
+      }
+    }
+    
+    /* Handle very short viewports */
+    @media (max-height: 700px) {
+      h1 { top: 76%; }
+      .loader { top: 92%; }
+      .logo { width: min(70vw, 340px); }
+    }
   </style>
 </head>
 <body>
